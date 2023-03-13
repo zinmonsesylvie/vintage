@@ -1,0 +1,54 @@
+.fond{
+    width: 40%;
+    background-color: #4054B2;
+    text-align:start;
+    margin-top:70px;
+    height: 30%;
+
+}
+.lo{
+    width: 30%;
+    background-color: #4054B2;
+    text-align:start;
+    margin-top:120px;
+    height: 20%;
+}
+.forgo{
+    width: 35%;
+    background-color: #4054B2;
+    text-align:start;
+    margin-top:150px;
+    height: 20%;
+}
+
+.a{
+    background-color: darkblue;
+    margin-left: 38%;
+    border-radius: 10px;
+}
+
+.b{
+    background-color: darkblue;
+    margin-left: 15%;
+    border-radius: 10px;
+}
+
+.c{
+    background-color: darkblue;
+    margin-left: 40%;
+    border-radius: 10px;
+}
+
+.m{
+    background-color:whitesmoke;
+}
+label{
+    color: white;
+}
+a{
+ text-decoration: none;
+ color: white;
+}
+a:hover{
+    color: black;
+}

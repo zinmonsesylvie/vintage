@@ -1,0 +1,91 @@
+@extends("Categories.base")
+@section('menu')
+    <a href="{{url('/categories')}}" class="nav-item nav-link text-white" >Acceuil</a>
+    <a href="{{route('articles.index')}}" class="nav-item nav-link text-dark " >Achat</a>
+    <a href="{{route('articles.create')}}" class="nav-item nav-link text-white">Vente</a>
+
+@endsection
+@section('content')
+    <div class="container-fluid pt-5" style="margin-top: 10%;" >
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Vêtements</span></h2>
+        </div>
+{{--AFFICHAGE DES ARTICES --}}
+        <div class="row px-xl-5 pb-3">
+        @foreach ($articles as $articles)
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div class="row" style="margin-bottom: 2px">
+                                <div class="col" style="border-radius:50% ;border:2px;border-color:rgb(144, 140, 140"><img src="{{asset('img/offer-2.png')}}" alt="" style="width: 30px;heigth:30px; border-radius:50% ;border:2px;border-color:rgb(144, 140, 140)"></div>
+                            </div>
+                            <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="{{asset('storage/'.$articles->photo )}}" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3" >Colorful Stylish Shirt</h6>
+                                <div class="d-flex justify-content-center">
+
+                                </div>
+                            </div>
+                            <?php
+                                $x=(string)$articles->vendeur->contact;
+                                $y='299'.$x;
+                            ?>
+                            <div class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="{{ route('details',$articles->id) }}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Détails</a>
+                                <a href="https://api.whatsapp.com/send?phone={{$y}}" class="btn btn-sm text-dark p-0" onclick="alert('Vous serez dirigé vers la discussion whatsapp du vendeur')"><i class="fas fa-shopping-cart text-primary mr-1"></i>Acheter</a>
+                            </div>
+                        </div>
+
+
+
+                </div>
+
+
+
+
+        @endforeach
+
+
+    {{-- FIN AFFICHAGE--}}
+
+    </div>
+
+        </div>
+    <!-- Products End -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5">
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel vendor-carousel">
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-1.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-2.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-3.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-4.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-5.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-6.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-7.jpg')}}" alt="">
+                    </div>
+                    <div class="vendor-item border p-4">
+                        <img src="{{asset('img/vendor-8.jpg')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
